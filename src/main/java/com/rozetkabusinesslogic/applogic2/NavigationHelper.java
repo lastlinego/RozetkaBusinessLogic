@@ -41,7 +41,15 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
         pages.homePage.openCreditLink();
     }
 
-    public String getTtitleOfPage() {
+    public String getTitleOfPage() {
         return pages.creditPage.getTitle();
+    }
+
+    public String getHeadingOfTheCart() {
+        return pages.homePage.cartTitle();
+    }
+
+    public void pressButtonCart() {
+        pages.homePage.openCart();
     }
 }

@@ -9,6 +9,7 @@ public class PageManager {
 
     public HomePage homePage;
     public CreditPage creditPage;
+    public MyProfilePage myProfilePage;
 
 
     public PageManager(WebDriver driver) {

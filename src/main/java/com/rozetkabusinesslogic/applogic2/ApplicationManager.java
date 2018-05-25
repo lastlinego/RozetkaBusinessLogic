@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 
     public class ApplicationManager implements IApplicationManager {
         private NavigationHelper navHelper;
+        private UserHelper userHelper;
         private WebDriver driver;
         private String baseUrl;
         private String devUrl;
@@ -33,6 +34,7 @@ import org.openqa.selenium.WebDriver;
 
 
             navHelper = new NavigationHelper (this);
+            userHelper = new UserHelper(this);
 
         }
 
@@ -42,6 +44,11 @@ import org.openqa.selenium.WebDriver;
         @Override
         public NavigationHelper getNavigationHelper() {
             return navHelper;
+        }
+
+        @Override
+        public UserHelper getUserHelper() {
+            return userHelper;
         }
 
         @Override
