@@ -16,4 +16,13 @@ public class UserHelper extends DriverBasedHelper implements IUserHelper {
                 .setPassword(user.getPass())
                 .clickLoginBtn();
     }
+
+    @Override
+    public void register(User user) {
+        pages.registrationPage
+                .setName(user.getName())
+                .setEmail(user.getEmail())
+                .setPass(user.getPass())
+                .clickRegistrationBtn();
+    }
 }

@@ -8,4 +8,5 @@ public interface INavigationHelper {
     void refreshPage();
     void navigateToHomePage();
     void navigateToCreditPage();
+    void navigateToRegistrationPage();
 }

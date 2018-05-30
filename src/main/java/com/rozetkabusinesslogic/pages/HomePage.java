@@ -26,6 +26,12 @@ public class HomePage extends AnyPage {
     @FindBy(xpath = "")
     private WebElement loginBtn;
 
+    @FindBy(xpath = "//a[text()='Войти в личный кабинет']")
+    private WebElement signInBtn;
+
+    @FindBy(xpath = "//a[text()='Регистрация']")
+    private WebElement signUpBtn;
+
 
     public CreditPage openCreditLink() {
         creditLink.click();
@@ -55,6 +61,12 @@ public class HomePage extends AnyPage {
     public MyProfilePage clickLoginBtn() {
         loginBtn.click();
         return pages.myProfilePage;
+    }
+
+
+    public RegistrationPage openRegistrationPage() {
+        signUpBtn.click();
+        return pages.registrationPage;
     }
 
 }

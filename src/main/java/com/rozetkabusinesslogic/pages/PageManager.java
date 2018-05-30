@@ -10,12 +10,15 @@ public class PageManager {
     public HomePage homePage;
     public CreditPage creditPage;
     public MyProfilePage myProfilePage;
+    public RegistrationPage registrationPage;
 
 
     public PageManager(WebDriver driver) {
         this.driver = driver;
         homePage = initElements(new HomePage(this));
         creditPage = initElements(new CreditPage(this));
+        registrationPage = initElements(new RegistrationPage(this));
+        myProfilePage = initElements(new MyProfilePage(this));
 
     }
 

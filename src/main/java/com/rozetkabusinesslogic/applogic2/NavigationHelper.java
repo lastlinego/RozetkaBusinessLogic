@@ -41,6 +41,10 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
         pages.homePage.openCreditLink();
     }
 
+    public void navigateToRegistrationPage() {
+        pages.homePage.openRegistrationPage();
+    }
+
     public String getTitleOfPage() {
         return pages.creditPage.getTitle();
     }
