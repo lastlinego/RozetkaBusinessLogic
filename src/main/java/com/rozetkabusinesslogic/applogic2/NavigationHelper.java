@@ -1,6 +1,7 @@
 package com.rozetkabusinesslogic.applogic2;
 
 import com.rozetkabusinesslogic.applogic.INavigationHelper;
+import com.rozetkabusinesslogic.pages.MyProfilePage;
 
 public class NavigationHelper extends DriverBasedHelper implements INavigationHelper {
     private String baseUrl;
@@ -45,6 +46,10 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
         pages.homePage.openRegistrationPage();
     }
 
+    public void navigateToLoginPopUp() {
+        pages.homePage.clickSignInBtnHomePage();
+    }
+
     public String getTitleOfPage() {
         return pages.creditPage.getTitle();
     }
@@ -55,6 +60,10 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
 
     public String getHeadingMyProfile() {
         return pages.myProfilePage.myProfileTitle();
+    }
+
+    public MyProfilePage navigateToMyProfileAsLogged() {
+        return pages.homePage.openPageAsLoggedUser();
     }
 
     public void pressButtonCart() {

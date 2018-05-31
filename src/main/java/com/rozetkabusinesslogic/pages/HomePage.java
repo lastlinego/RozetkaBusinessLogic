@@ -1,7 +1,9 @@
 package com.rozetkabusinesslogic.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class HomePage extends AnyPage {
     public HomePage(PageManager pages) {
@@ -17,13 +19,16 @@ public class HomePage extends AnyPage {
     @FindBy(xpath = "//h2[@class='empty-cart-title inline sprite-side']")
     private WebElement cartHeading;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//a[text()='Войти в личный кабинет']")
+    private WebElement signInButtonHomePage;
+
+    @FindBy(xpath = "//input[@class='input-text auth-input-text'][@name='login']")
     private WebElement emailField;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//div[@class='auth-f-i']//input[@type='password']")
     private WebElement passField;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//button[@type='submit'][contains(text(),'Войти')]")
     private WebElement loginBtn;
 
     @FindBy(xpath = "//a[text()='Войти в личный кабинет']")
@@ -32,6 +37,15 @@ public class HomePage extends AnyPage {
     @FindBy(xpath = "//a[text()='Регистрация']")
     private WebElement signUpBtn;
 
+    @FindBy(xpath = "//span[@id='header_user_menu_parent']/a[@name='profile']")
+    private WebElement myProfileBtn;
+
+
+    public MyProfilePage openPageAsLoggedUser() {
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@id='header_user_menu_parent']/a[@name='profile']")));
+        myProfileBtn.click();
+        return pages.myProfilePage;
+    }
 
     public CreditPage openCreditLink() {
         creditLink.click();
@@ -48,13 +62,18 @@ public class HomePage extends AnyPage {
         return cartHeading.getText();
     }
 
+    public HomePage clickSignInBtnHomePage() {
+        signInButtonHomePage.click();
+        return pages.homePage;
+    }
+
     public HomePage setEmail(String email) {
         emailField.sendKeys(email);
         return this;
     }
 
     public HomePage setPassword(String password) {
-        emailField.sendKeys(password);
+        passField.sendKeys(password);
         return this;
     }
 
