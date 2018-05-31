@@ -53,6 +53,10 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
         return pages.homePage.cartTitle();
     }
 
+    public String getHeadingMyProfile() {
+        return pages.myProfilePage.myProfileTitle();
+    }
+
     public void pressButtonCart() {
         pages.homePage.openCart();
     }
