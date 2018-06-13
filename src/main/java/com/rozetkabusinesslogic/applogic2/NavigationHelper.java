@@ -1,6 +1,7 @@
 package com.rozetkabusinesslogic.applogic2;
 
 import com.rozetkabusinesslogic.applogic.INavigationHelper;
+import com.rozetkabusinesslogic.pages.AsusPage;
 import com.rozetkabusinesslogic.pages.CreditPage;
 import com.rozetkabusinesslogic.pages.MyProfilePage;
 import com.rozetkabusinesslogic.pages.NoteBookPage;
@@ -17,21 +18,6 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
     @Override
     public void openMainPage() {
         driver.get(baseUrl);
-    }
-
-    @Override
-    public void openRelativeUrl(String url) {
-
-    }
-
-    @Override
-    public void switchToNewTab() {
-
-    }
-
-    @Override
-    public void refreshPage() {
-        super.driver.navigate().refresh();
     }
 
     @Override
@@ -98,6 +84,30 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
 
     public int getSizeOfTheBrands() {
         return pages.noteBookPage.numberOfTheBrands();
+    }
+
+    public AsusPage clickAsusBtn() {
+        return pages.noteBookPage.asusBtn();
+    }
+
+    public int getDefaultAsusItems() {
+        return pages.asusPage.listOfTheAsusDefault();
+    }
+
+    public AsusPage changeViewToList() {
+        return pages.asusPage.cliclListViewBtn();
+    }
+
+    public int getAsusItemsInTheListView() {
+        return pages.asusPage.itemsInTheListView();
+    }
+
+    public AsusPage clickLoadMoreBtn() {
+        return pages.asusPage.loadMoreBtn();
+    }
+
+    public int getItemsAfterLoadMore() throws InterruptedException {
+        return pages.asusPage.itemsAfterLoadMore();
     }
 
 
