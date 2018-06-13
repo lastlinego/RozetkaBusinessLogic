@@ -103,7 +103,7 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
         return pages.asusPage.loadMoreBtn();
     }
 
-    public int getItemsAfterLoadMore() throws InterruptedException {
+    public int getItemsAfterLoadMore() {
         return pages.asusPage.itemsAfterLoadMore();
     }
 

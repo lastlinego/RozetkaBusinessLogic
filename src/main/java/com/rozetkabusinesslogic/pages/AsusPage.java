@@ -50,8 +50,8 @@ public class AsusPage extends AnyPage {
         return this;
     }
 
-    public int itemsAfterLoadMore() throws InterruptedException {
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='g-i-list available'] | //div[@class='g-i-list out_of_stock'] | //div[@class='g-i-list limited']")));
+    public int itemsAfterLoadMore() {
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//div[@class='g-i-list available'] | //div[@class='g-i-list out_of_stock'] | //div[@class='g-i-list limited'])[32]")));
         return listOfTheItemsLoadMore.size();
     }
 

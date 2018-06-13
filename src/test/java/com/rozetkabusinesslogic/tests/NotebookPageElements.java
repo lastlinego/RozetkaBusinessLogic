@@ -27,7 +27,7 @@ public class NotebookPageElements extends TestBase {
     }
 
     @Test
-    public void sizeItemsAfterLoadMore() throws InterruptedException {
+    public void sizeItemsAfterLoadMore() {
         app.getNavigationHelper().navigateToNoteBookPage();
         app.getNavigationHelper().clickAsusBtn();
         app.getNavigationHelper().changeViewToList();

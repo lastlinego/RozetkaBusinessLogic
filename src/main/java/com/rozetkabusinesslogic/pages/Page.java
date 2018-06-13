@@ -15,7 +15,7 @@ public class Page {
     public Page(PageManager pages) {
         this.pages = pages;
         driver = pages.getWebDriver();
-        wait = new WebDriverWait(driver, 9);
+        wait = new WebDriverWait(driver, 6);
     }
 
     public WebDriver getWebDriver() {
