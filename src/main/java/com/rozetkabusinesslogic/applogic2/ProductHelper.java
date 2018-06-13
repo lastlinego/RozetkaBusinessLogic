@@ -14,6 +14,14 @@ public class ProductHelper extends DriverBasedHelper implements IProductHelper {
                 .clickSearchBtn();
     }
 
+    public void addProductToCart() {
+        pages.searchResultsPage.clickBuyBtn();
+    }
+
+    public String getTextOfProductInCart() {
+        return pages.searchResultsPage.getNameOfTheLot();
+    }
+
 
 
 }
