@@ -1,6 +1,7 @@
 package com.rozetkabusinesslogic.applogic2;
 
 import com.rozetkabusinesslogic.applogic.INavigationHelper;
+import com.rozetkabusinesslogic.pages.CreditPage;
 import com.rozetkabusinesslogic.pages.MyProfilePage;
 
 public class NavigationHelper extends DriverBasedHelper implements INavigationHelper {
@@ -72,6 +73,18 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
 
     public int getNumberOfElementsCredit() {
         return pages.creditPage.listOfCreditRules();
+    }
+
+    public String getTitleOfCrediTable() {
+        return pages.creditPage.creditTableTitle();
+    }
+
+    public String getAgeAlfaBank() {
+        return pages.creditPage.creditAgeAlfaBank();
+    }
+
+    public CreditPage scrollToAlfaAge() {
+        return pages.creditPage.scrollCreditPage();
     }
 
 
