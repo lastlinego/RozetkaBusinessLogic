@@ -87,5 +87,9 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
         return pages.creditPage.scrollCreditPage();
     }
 
+    public String getTheTableItemsInformation() {
+        return pages.creditPage.creditTableItems("0,01% на 15 месяцев", "Льготный период");
+    }
+
 
 }

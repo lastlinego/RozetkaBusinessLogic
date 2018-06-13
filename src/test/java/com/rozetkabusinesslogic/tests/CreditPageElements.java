@@ -31,5 +31,11 @@ public class CreditPageElements extends TestBase {
         Assert.assertEquals(app.getNavigationHelper().getAgeAlfaBank(), "21-70");
     }
 
+    @Test
+    public void checkTheTableInfo() {
+        app.getNavigationHelper().navigateToCreditPage();
+        Assert.assertEquals(app.getNavigationHelper().getTheTableItemsInformation(), "15");
+    }
+
 
 }

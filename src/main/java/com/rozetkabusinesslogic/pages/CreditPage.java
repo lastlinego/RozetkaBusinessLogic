@@ -1,5 +1,6 @@
 package com.rozetkabusinesslogic.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -22,6 +23,13 @@ public class CreditPage extends AnyPage {
     @FindBy(xpath = "//td[@class='rz-credit-terms-td rz-credit-terms-td-age'][contains(text(),'21-70')]")
     private WebElement ageAlfaBank;
 
+    @FindBy(className = "rz-credit-terms-table")
+    private WebElement tableElement;
+
+    By rows = By.xpath("//tr[@class='rz-credit-terms-tr']");
+
+    By columnNameList = By.xpath("//td[@class='rz-credit-terms-td']");
+
     public int listOfCreditRules() {
         return creditRules.size();
     }
@@ -40,4 +48,23 @@ public class CreditPage extends AnyPage {
         actions.perform();
         return this;
     }
+
+    public String creditTableItems(String nameOfTheProductPackage, String columnName) {
+        List<WebElement> rowList = tableElement.findElements(rows);
+        List<WebElement> columnList = tableElement.findElements(columnNameList);
+
+        for (WebElement row : rowList) {
+            if (row.getText().contains(nameOfTheProductPackage)) {
+                for (int i = 0; i < columnList.size(); i++) {
+                    WebElement result = columnList.get(i);
+                    if (result.getText().contains(columnName)) {
+                        return row.findElements(By.className("rz-credit-terms-td")).get(i).getText();
+                    }
+                }
+            }
+        }
+
+        return "not found";
+    }
+
 }
