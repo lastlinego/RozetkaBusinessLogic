@@ -70,5 +70,9 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
         pages.homePage.openCart();
     }
 
+    public int getNumberOfElementsCredit() {
+        return pages.creditPage.listOfCreditRules();
+    }
+
 
 }
