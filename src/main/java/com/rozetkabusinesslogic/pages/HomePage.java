@@ -2,6 +2,7 @@ package com.rozetkabusinesslogic.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -45,6 +46,12 @@ public class HomePage extends AnyPage {
 
     @FindBy(xpath = "//button[@class='btn-link-i js-rz-search-button']")
     private WebElement searchButton;
+
+    @FindBy(xpath = "//a[@href='https://rozetka.com.ua/computers-notebooks/c80253/']")
+    private WebElement categoryNotebooksBtn;
+
+    @FindBy(xpath = "//li[@class='f-menu-sub']//a[@href='https://rozetka.com.ua/notebooks/c80004/']")
+    private WebElement notebooksBtn;
 
 
     public MyProfilePage openPageAsLoggedUser() {
@@ -94,22 +101,6 @@ public class HomePage extends AnyPage {
         return pages.registrationPage;
     }
 
-//    public HomePage setPr(String searchRequest) {
-//        searchField.sendKeys(searchRequest);
-//        return this;
-//    }
-//
-//    public SearchResultsPage clickSearchBtn() {
-//        searchButton.click();
-//        return pages.searchResultsPage;
-//    }
-//
-////    public SearchResultsPage searchSomething(String searchRequest) {
-////        this.typeInSearchField(searchRequest);
-////        this.clickSearchBtn();
-////        return pages.searchResultsPage;
-////    }
-
     public HomePage setProductName(String productName) {
         searchField.sendKeys(productName);
         return this;
@@ -118,6 +109,17 @@ public class HomePage extends AnyPage {
     public SearchResultsPage clickSearchBtn() {
         searchButton.click();
         return pages.searchResultsPage;
+    }
+
+    public NoteBookPage clickNoteBookBtn() {
+        actions = new Actions(driver);
+        actions
+                .moveToElement(categoryNotebooksBtn)
+                .build()
+                .perform();
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//li[@class='f-menu-sub']//a[@href='https://rozetka.com.ua/notebooks/c80004/']")));
+        notebooksBtn.click();
+        return pages.noteBookPage;
     }
 
 

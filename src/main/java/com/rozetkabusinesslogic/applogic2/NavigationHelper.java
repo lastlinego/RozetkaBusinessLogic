@@ -3,6 +3,7 @@ package com.rozetkabusinesslogic.applogic2;
 import com.rozetkabusinesslogic.applogic.INavigationHelper;
 import com.rozetkabusinesslogic.pages.CreditPage;
 import com.rozetkabusinesslogic.pages.MyProfilePage;
+import com.rozetkabusinesslogic.pages.NoteBookPage;
 
 public class NavigationHelper extends DriverBasedHelper implements INavigationHelper {
     private String baseUrl;
@@ -89,6 +90,14 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
 
     public String getTheTableItemsInformation() {
         return pages.creditPage.creditTableItems("0,01% на 15 месяцев", "Льготный период");
+    }
+
+    public NoteBookPage navigateToNoteBookPage() {
+        return pages.homePage.clickNoteBookBtn();
+    }
+
+    public int getSizeOfTheBrands() {
+        return pages.noteBookPage.numberOfTheBrands();
     }
 
 

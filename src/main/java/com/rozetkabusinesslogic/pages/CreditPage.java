@@ -12,8 +12,6 @@ public class CreditPage extends AnyPage {
         super(pages);
     }
 
-    Actions actions;
-
     @FindBy(xpath = "//div[@class='credit-rules-list']/div")
     private List<WebElement> creditRules;
 
