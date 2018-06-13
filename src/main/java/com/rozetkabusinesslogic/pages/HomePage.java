@@ -111,7 +111,7 @@ public class HomePage extends AnyPage {
         return pages.searchResultsPage;
     }
 
-    public NoteBookPage clickNoteBookBtn() {
+    public NotebookPage clickNoteBookBtn() {
         actions = new Actions(driver);
         actions
                 .moveToElement(categoryNotebooksBtn)
@@ -119,7 +119,7 @@ public class HomePage extends AnyPage {
                 .perform();
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//li[@class='f-menu-sub']//a[@href='https://rozetka.com.ua/notebooks/c80004/']")));
         notebooksBtn.click();
-        return pages.noteBookPage;
+        return pages.notebookPage;
     }
 
 

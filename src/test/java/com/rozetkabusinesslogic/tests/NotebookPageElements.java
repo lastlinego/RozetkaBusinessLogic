@@ -34,4 +34,12 @@ public class NotebookPageElements extends TestBase {
         app.getNavigationHelper().clickLoadMoreBtn();
         Assert.assertEquals(app.getNavigationHelper().getItemsAfterLoadMore(), 32);
     }
+
+    @Test
+    public void notebooksFilterByPrice() {
+        app.getNavigationHelper().navigateToNoteBookPage();
+        app.getNavigationHelper().clickFilterPrice10K();
+        Assert.assertEquals(app.getNavigationHelper().getFilterText(), "от 10000 до 12999 грн");
+        app.getNavigationHelper().pressResetFilter();
+    }
 }

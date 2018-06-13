@@ -12,8 +12,9 @@ public class PageManager {
     public MyProfilePage myProfilePage;
     public RegistrationPage registrationPage;
     public SearchResultsPage searchResultsPage;
-    public NoteBookPage noteBookPage;
+    public NotebookPage notebookPage;
     public AsusPage asusPage;
+    public NotebookPageWithFilter notebookPageWithFilter;
 
 
     public PageManager(WebDriver driver) {
@@ -23,8 +24,9 @@ public class PageManager {
         registrationPage = initElements(new RegistrationPage(this));
         myProfilePage = initElements(new MyProfilePage(this));
         searchResultsPage = initElements(new SearchResultsPage(this));
-        noteBookPage = initElements(new NoteBookPage(this));
+        notebookPage = initElements(new NotebookPage(this));
         asusPage = initElements(new AsusPage(this));
+        notebookPageWithFilter = initElements(new NotebookPageWithFilter(this));
 
     }
 

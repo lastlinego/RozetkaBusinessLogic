@@ -1,10 +1,7 @@
 package com.rozetkabusinesslogic.applogic2;
 
 import com.rozetkabusinesslogic.applogic.INavigationHelper;
-import com.rozetkabusinesslogic.pages.AsusPage;
-import com.rozetkabusinesslogic.pages.CreditPage;
-import com.rozetkabusinesslogic.pages.MyProfilePage;
-import com.rozetkabusinesslogic.pages.NoteBookPage;
+import com.rozetkabusinesslogic.pages.*;
 
 public class NavigationHelper extends DriverBasedHelper implements INavigationHelper {
     private String baseUrl;
@@ -78,16 +75,16 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
         return pages.creditPage.creditTableItems("0,01% на 15 месяцев", "Льготный период");
     }
 
-    public NoteBookPage navigateToNoteBookPage() {
+    public NotebookPage navigateToNoteBookPage() {
         return pages.homePage.clickNoteBookBtn();
     }
 
     public int getSizeOfTheBrands() {
-        return pages.noteBookPage.numberOfTheBrands();
+        return pages.notebookPage.numberOfTheBrands();
     }
 
     public AsusPage clickAsusBtn() {
-        return pages.noteBookPage.asusBtn();
+        return pages.notebookPage.asusBtn();
     }
 
     public int getDefaultAsusItems() {
@@ -108,6 +105,18 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
 
     public int getItemsAfterLoadMore() throws InterruptedException {
         return pages.asusPage.itemsAfterLoadMore();
+    }
+
+    public NotebookPageWithFilter clickFilterPrice10K() {
+        return pages.notebookPage.clickFilter10Btn();
+    }
+
+    public String getFilterText() {
+        return pages.notebookPageWithFilter.nameOfTheSelectedFilter();
+    }
+
+    public NotebookPageWithFilter pressResetFilter() {
+        return pages.notebookPageWithFilter.pressResetFilterBtn();
     }
 
 

@@ -5,8 +5,8 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class NoteBookPage extends AnyPage {
-    public NoteBookPage(PageManager pages) {
+public class NotebookPage extends AnyPage {
+    public NotebookPage(PageManager pages) {
         super(pages);
     }
 
@@ -16,6 +16,9 @@ public class NoteBookPage extends AnyPage {
     @FindBy(xpath = "//a[@class='m-cat-subl-i-link'][contains(text(), 'Asus')]")
     private WebElement asusBtn;
 
+    @FindBy(xpath = "//a[@class='m-cat-subl-i-link'][contains(text(),'10 000 грн - 12 999 грн')]")
+    private WebElement filter10kBtn;
+
     public int numberOfTheBrands() {
         return brandsList.size();
     }
@@ -23,5 +26,10 @@ public class NoteBookPage extends AnyPage {
     public AsusPage asusBtn() {
         asusBtn.click();
         return pages.asusPage;
+    }
+
+    public NotebookPageWithFilter clickFilter10Btn() {
+        filter10kBtn.click();
+        return pages.notebookPageWithFilter;
     }
 }
