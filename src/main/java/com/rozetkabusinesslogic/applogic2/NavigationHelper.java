@@ -69,4 +69,6 @@ public class NavigationHelper extends DriverBasedHelper implements INavigationHe
     public void pressButtonCart() {
         pages.homePage.openCart();
     }
+
+
 }

@@ -40,6 +40,12 @@ public class HomePage extends AnyPage {
     @FindBy(xpath = "//span[@id='header_user_menu_parent']/a[@name='profile']")
     private WebElement myProfileBtn;
 
+    @FindBy(xpath = "//input[@class='rz-header-search-input-text passive']")
+    private WebElement searchField;
+
+    @FindBy(xpath = "//button[@class='btn-link-i js-rz-search-button']")
+    private WebElement searchButton;
+
 
     public MyProfilePage openPageAsLoggedUser() {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@id='header_user_menu_parent']/a[@name='profile']")));
@@ -87,5 +93,32 @@ public class HomePage extends AnyPage {
         signUpBtn.click();
         return pages.registrationPage;
     }
+
+//    public HomePage setPr(String searchRequest) {
+//        searchField.sendKeys(searchRequest);
+//        return this;
+//    }
+//
+//    public SearchResultsPage clickSearchBtn() {
+//        searchButton.click();
+//        return pages.searchResultsPage;
+//    }
+//
+////    public SearchResultsPage searchSomething(String searchRequest) {
+////        this.typeInSearchField(searchRequest);
+////        this.clickSearchBtn();
+////        return pages.searchResultsPage;
+////    }
+
+    public HomePage setProductName(String productName) {
+        searchField.sendKeys(productName);
+        return this;
+    }
+
+    public SearchResultsPage clickSearchBtn() {
+        searchButton.click();
+        return pages.searchResultsPage;
+    }
+
 
 }

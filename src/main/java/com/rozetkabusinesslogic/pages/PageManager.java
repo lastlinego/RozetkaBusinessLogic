@@ -11,6 +11,7 @@ public class PageManager {
     public CreditPage creditPage;
     public MyProfilePage myProfilePage;
     public RegistrationPage registrationPage;
+    public SearchResultsPage searchResultsPage;
 
 
     public PageManager(WebDriver driver) {
@@ -19,6 +20,7 @@ public class PageManager {
         creditPage = initElements(new CreditPage(this));
         registrationPage = initElements(new RegistrationPage(this));
         myProfilePage = initElements(new MyProfilePage(this));
+        searchResultsPage = initElements(new SearchResultsPage(this));
 
     }
 
